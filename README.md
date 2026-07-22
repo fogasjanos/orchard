@@ -32,7 +32,7 @@ public int harvestWithTokens(int[][] orchard);
 
 ### Requirements
 
-- Java 11+
+- Java 21+ 
 
 ### Checkout
 `git clone https://github.com/fogasjanos/orchard.git`

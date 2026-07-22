@@ -7,12 +7,12 @@ repositories {
 }
 
 dependencies {
-    val logbackVersion = "1.5.15"
-    val lombokVersion = "1.18.36"
-    val slf4jVersion = "2.0.16"
-    val mockitoVersion = "5.14.2"
-    val jacksonVersion = "2.18.2"
-    val junitVersion = "5.11.4"
+    val logbackVersion = "1.5.38"
+    val lombokVersion = "1.18.46"
+    val slf4jVersion = "2.0.18"
+    val mockitoVersion = "5.23.0"
+    val jacksonVersion = "3.2.1"
+    val junitVersion = "6.1.1"
 
 
     // lombok
@@ -24,6 +24,7 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:${logbackVersion}")
 
     // testing
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher:${junitVersion}")
     testImplementation("org.junit.jupiter:junit-jupiter:${junitVersion}")
     testImplementation("org.junit.jupiter:junit-jupiter-params:${junitVersion}")
 
@@ -33,7 +34,7 @@ dependencies {
     testCompileOnly("org.projectlombok:lombok:${lombokVersion}")
     testAnnotationProcessor("org.projectlombok:lombok:${lombokVersion}")
 
-    testImplementation("com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}")
+    testImplementation("tools.jackson.core:jackson-databind:${jacksonVersion}")
 }
 
 tasks.test {

@@ -1,13 +1,13 @@
 package eu.fogas.orchard;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.extension.ParameterContext;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.converter.ArgumentConversionException;
 import org.junit.jupiter.params.converter.ArgumentConverter;
 import org.junit.jupiter.params.converter.ConvertWith;
 import org.junit.jupiter.params.provider.CsvFileSource;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.ObjectMapper;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -42,7 +42,7 @@ public class HarvestTest {
             }
             try {
                 return new ObjectMapper().readValue((String) source, int[][].class);
-            } catch (JsonProcessingException e) {
+            } catch (JacksonException e) {
                 throw new ArgumentConversionException(e.getMessage());
             }
         }
