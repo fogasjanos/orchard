@@ -22,14 +22,14 @@ public class PointTest {
     }
 
     @Test
-    public void getSum_noInitArray() {
+    public void getSum_shouldSummarizeApples_whenThereIsNoInitialArray() {
         Point p = new Point(1, 2, 9);
 
         assertEquals(9, p.getSum(NO_TOKEN));
     }
 
     @Test
-    public void getSum_initArray() {
+    public void getSum_shouldSummarizeApples_whenThereIsInitialArray() {
         int[] init = new int[]{1, 2};
 
         Point p = new Point(0, 0, 0, init);
@@ -38,7 +38,7 @@ public class PointTest {
     }
 
     @Test
-    public void getSum() {
+    public void getSum_shouldSummarizeApples_whenThereIsInitialArrayAndApples() {
         int[] init = new int[]{1, 2};
 
         Point p = new Point(0, 0, 3, init);
@@ -47,14 +47,14 @@ public class PointTest {
     }
 
     @Test
-    public void getSum_withTokensNoInitArray() {
+    public void getSum_shouldSummarizeApplesWithToken_whenThereIsNoInitialArray() {
         Point p = new Point(1, 2, 9);
 
         assertEquals(18, p.getSum(TOKEN));
     }
 
     @Test
-    public void getSum_withTokensInitArray() {
+    public void getSum_shouldSummarizeApplesWithToken_whenThereIsInitialArray() {
         int[] init = new int[]{1, 2, 3};
 
         Point p = new Point(0, 0, 0, init);
@@ -63,7 +63,7 @@ public class PointTest {
     }
 
     @Test
-    public void getSum_withTokens() {
+    public void getSum_shouldSummarizeApplesWithToken_whenThereIsInitialArrayAndApples() {
         int[] init = new int[]{1, 2, 3};
 
         Point p = new Point(0, 0, 4, init);
